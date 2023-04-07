@@ -1,6 +1,6 @@
 # Личный проект «{{projectTitle}}»
 
-* Студент: [{{userName}}]({{userProfile}}).
+* Студент: [{{https://github.com/Androden/}}]({{https://github.com/Androden/}}).
 * Наставник: `Неизвестно`.
 
 ---

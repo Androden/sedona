@@ -11,12 +11,12 @@
   font-family:"PT Sans";
   font-style: normal;
   font-weight: 700;
-  src: local("PT Sans"),
+  src: local("PT Sans Bold"),
        url("../fonts/ptsans-700.woff2") format("woff2");
   font-display: swap;
 }
 
-body{
+/* body{
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -25,15 +25,52 @@ body{
 
   background-color: #ffffff;
   color: #333333;
-}
+} */
 
 /*Common*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .page{
+  height: 100%;
+
   color: #333333;
+  background-color: #f2f2f2;
 
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
 }
+
+.page-body{
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  min-height: 100%;
+  margin: 0 auto;
+
+  background-color: #ffffff;
+}
+
+.page-main{
+  flex-grow: 1;
+}
+
+/* Buttons */
 
 .button{
   color: #ffffff;
@@ -54,21 +91,80 @@ body{
   font-size: 20px;
 }
 
+/* Icon button */
+
+.icon-button {
+  display: block;
+  width: 42px;
+  height: 42px;
+  outline: 1px solid red;
+}
+
+/*Forms*/
+
+.field-input{
+  font-family: inherit;
+  font-size: 18px;
+
+  background-color: #f2f2f2;
+}
+
 /*Header*/
 
+.header-nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 72px;
+}
+
 .site-menu{
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  margin: 0 30px;
+  padding: 0;
+
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
+
+  list-style-type: none;
+}
+
+.site-menu-item{
+  display: flex;
+  align-items: center;
 }
 
 .site-menu-link{
+  display: block;
+  padding: 17px;
+
   color: #000000;
 
   text-decoration: none;
 }
 
+.additional-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.additional-menu-button {
+  margin-left: 20px;
+}
+
 /*Footer*/
+.page-footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 72px;
+}
+
+.footer-social{
+  margin: 0;
+}
 
 .footer-phone{
   color: #000000;
@@ -81,7 +177,16 @@ body{
 
 /*Main*/
 
-.page-main-header{
+.main-promo{
+  min-height: 485px;
+
+  background-color: #83B3D3;
+  background-image: url("../images/promo.jpg");
+}
+
+.main-header{
+  padding: 35px 72px 80px;
+
   color: #ffffff;
   background-color: #83B3D3;
   background-image: url("../images/catalog-background.jpg");
@@ -89,13 +194,11 @@ body{
   background-size: cover;
 }
 
-.page-main-heading{
+.main-heading{
+  margin: 0;
+
   font-size: 60px;
   line-height: 78px;
-}
-
-.breadcrumbs{
-  font-size: 16px;
 }
 
 /*Section*/
@@ -114,15 +217,6 @@ body{
   line-height: 36px;/*у HTML Academy другой пример — 26*/
 }
 
-/*Forms*/
-
-.field-input{
-  font-family: inherit;
-  font-size: 18px;
-
-  background-color: #f2f2f2;
-}
-
 /*Range*/
 
 .range-input{
@@ -135,6 +229,20 @@ body{
 
 .range-title{
   opacity: 0.3;
+}
+
+/* Breadcrumbs */
+
+.breadcrumbs{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 45px;
+  padding: 0;
+
+  font-size: 16px;
+
+  list-style-type: none;
 }
 
 /* Card */
@@ -155,14 +263,16 @@ body{
   text-transform: uppercase;
 }
 
-/*Pagination*/
+/*Advantages*/
 
-.pagination-link{
-  color: #ffffff;
-  background-color: #83B3D3;
+.advantages{
+  text-align: center;
 }
 
-/*Advantages*/
+.advantages-list{
+  margin: 0;
+  padding: 0;
+}
 
 .advantages-list-inner{
   color: #333333;
@@ -202,26 +312,195 @@ body{
   line-height: 21px;
 }
 
+/* Search */
+
+.search{
+  text-align: center;
+}
+
+/* Select */
+
+.select-label {
+  margin: 0;
+  margin-right: 50px;
+}
+
+
 /*Subscribe*/
 
-.subscribe-primary{
-  color: #ffffff;
+.subscribe{
+  text-align: center;
 }
 
 .subscribe-primary {
   color: #ffffff;
+  border-color: #83B3D3;
   background: url("../images/background-subscribe.jpg") no-repeat #83B3D3;
   background-size: cover;
 }
 
-/*Filter*/
+.subscribe-primary .section-title{
+  color: #ffffff;
+}
+/* Social */
 
-.filter-title{
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 26px; /*откуда*/
+.social{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  outline: 1px solid red;
+
+  list-style-type: none;
 }
 
-/* .catalog-background-container{
-  background: url("../images/catalog-background.jpg") no-repeat #fff;
-} */
+.social-item {
+  margin: 0 2px;
+}
+
+.social-link {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+
+/*Filter*/
+.filter-form{
+  display: flex;
+}
+
+.filter-title{
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px; /*откуда*/
+}
+
+.filter-fieldset{
+  width: 200px;
+  margin: 0;
+  margin-right: 17px;
+  padding: 0;
+}
+
+.filter-fieldset-price{
+  width: 289px;
+  margin-left: 95px;
+}
+
+.filter-list{
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.filter-buttons{
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  margin-left: 64px;
+}
+
+.filter-reset{
+  align-self: center;
+
+  color: #ffffff;
+  background-color: transparent;
+
+  font-family: inherit;
+  font-size: 18px;
+}
+
+/* Catalog */
+
+.catalog{
+  padding: 0 72px;
+}
+
+.catalog-sort{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 44px 0;
+}
+
+.catalog-title{
+  width: 50%;
+  margin: 0;
+}
+
+.catalog-select{
+  width: 287px;
+  margin-right: auto;
+}
+
+/* View */
+
+.view{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.view-item {
+  margin: 0 4px;
+}
+
+.view-link {
+  display: block;
+  width: 48px;
+  height: 48px;
+  outline: 1px solid red;
+}
+
+/*Pagination*/
+.pagination {
+  padding: 30px 0;
+}
+
+.pagination-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.pagination-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.pagination-item {
+  margin: 0 4px;
+}
+
+.pagination-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 55px;
+  height: 55px;
+  padding: 8px;
+
+  color: #ffffff;
+  background-color: #83B3D3;
+
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.pagination-select{
+  display: flex;
+}
+
+
+
