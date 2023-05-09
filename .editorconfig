@@ -8,15 +8,15 @@
 # на https://editorconfig.org и в разделе «Download a Plugin»
 # скачайте дополнение для вашего редактора.
 
-root = true
+root = true #лежит в корне
 
-[*]
+[*] # правила для всех типов файлов
 charset = utf-8
-end_of_line = lf
-indent_size = 2
-indent_style = space
-insert_final_newline = true
-trim_trailing_whitespace = true
+end_of_line = lf # конец строки
+indent_size = 2 # чему равен отступ
+indent_style = space # используем пробелы для отступов
+insert_final_newline = true # добаляет последнюю финальную строку (так принято)
+trim_trailing_whitespace = true # подрезает (убирает) концевые (лишние в конце) пробелы
 
 [*.md]
 trim_trailing_whitespace = false
